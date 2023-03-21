@@ -1,5 +1,7 @@
 # Plot4GMNS: An open-source academic research tool for visualizing multimodal networks for transportation system modeling and optimization
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/7823bc6bd7134355941b416922c69bb8)](https://app.codacy.com/gh/xyluo25/plot4gmns?utm_source=github.com&utm_medium=referral&utm_content=xyluo25/plot4gmns&utm_campaign=Badge_Grade)
+
 **Authors:** Dr. Junhua Chen, Zanyang Cui, Xiangyong Luo
 
 **Email:** cjh@bjtu.edu.cn, zanyangcui@outlook.com, luoxiangyong01@gmail.com
