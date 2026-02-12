@@ -8,14 +8,19 @@
 
 ## Table of Contents
 
-- [Introduction](#introduction)
-- [Requirements](#requirements)
-- [Install](#install)
-- [Features](#features)
-- [Usage](#usage)
-  - [Quickstart](#quickstart)
-  - [Advance](#advance)
-- [Contributing](#contributing)
+- [Plot4GMNS: An open-source academic research tool for visualizing multimodal networks for transportation system modeling and optimization](#plot4gmns-an-open-source-academic-research-tool-for-visualizing-multimodal-networks-for-transportation-system-modeling-and-optimization)
+  - [Table of Contents](#table-of-contents)
+  - [Introduction](#introduction)
+  - [Requirements](#requirements)
+  - [Install](#install)
+  - [Features](#features)
+  - [Usage](#usage)
+    - [Quickstart](#quickstart)
+    - [Advance Usage](#advance-usage)
+  - [Contributing](#contributing)
+  - [Contributors](#contributors)
+  - [Changelog](#changelog)
+    - [TODO LIST](#todo-list)
 
 ## Introduction
 
@@ -64,7 +69,7 @@ Before starting, you must have prepared network files, including node.csv, link.
 
 ### Quickstart
 
-**Step 1: generate multimodal network**
+**Step 0: generate multimodal network**
 
 ```python
 import plot4gmns as p4g
@@ -74,6 +79,33 @@ mnet=p4g.generate_multi_network_from_csv(r'./datasets')
 > After executing the above command, you will get an Html file, as shown below. More visual operations are supported on the web site..
 
 <img src="https://github.com/PariseC/plot4gmns/blob/main/docs/media/1674358532007.png?raw=true" width="800" height="600" alt=" "/><br/>
+
+**Step 1: Show GMNS data elements ([GMNS DATA Elements](https://github.com/zephyr-data-specs/GMNS/tree/main/spec))
+
+> The supported data elements are: node, link, lane, zone, location, geometry, poi, movement, demand
+
+```python
+# we can visualize GMNS elements and any combination of each data elements
+
+# GMNS specification: https://github.com/zephyr-data-specs/GMNS/tree/main/spec
+# For data elements including geometry: node, link, lane, zone, location, geometry, poi, movement, demand
+
+cf_node = p4g.show_gmns_nodes(mnet)
+cf_node.show()
+
+cf_link = p4g.show_gmns_links(mnet)
+cf_link.show()
+
+# you can also show the combined network
+cf_node_link = p4g.show_gmns_links(mnet, fig_obj=cf_node)
+cf_node_link.show()
+```
+
+<img src="https://github.com/xyluo25/plot4gmns/blob/main/docs/media/network_nodes.png?raw=true" width="800" height="600" alt=" "/><br/>
+
+<img src="https://github.com/xyluo25/plot4gmns/blob/main/docs/media/network_links.png?raw=true" width="800" height="600" alt=" "/><br/>
+
+<img src="https://github.com/xyluo25/plot4gmns/blob/main/docs/media/network_links_combine.png?raw=true" width="800" height="600" alt=" "/><br/>
 
 **Step 2: show networks in different modes**
 
