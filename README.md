@@ -49,6 +49,7 @@ pip install plot4gmns
 
 ## Features
 
+* [x] **show GMNS data elements (coordinates or geometry included)
 * [X] **web-based network visualization**
 * [X] **show networks in different modes**
 * [X] **show network with given node types**

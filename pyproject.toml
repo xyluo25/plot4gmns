@@ -1,0 +1,63 @@
+[build-system]
+requires = ["setuptools", "wheel", "twine"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "plot4gmns"
+version = "0.1.4"
+description = "Plot4GMNS: An open-source academic research tool for visualizing multimodal networks for transportation system modeling and optimization"
+authors = [
+    {name = "Xiangyong Luo", email = "luoxiangyong01@gmail.com"},
+]
+maintainers = [
+    {name = "Junhua Chen", email = "cjh@bjtu.edu.cn"},
+    {name = "Xiangyong Luo", email = "luoxiangyong01@gmail.com"},
+    {name = "Zanyang Cui", email = "zanyangcui@outlook.com"}
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Operating System :: OS Independent",
+]
+
+readme = {file = 'README.md', content-type='text/markdown'}
+# license-files = ['LICENSE']
+
+requires-python = ">=3.10"
+keywords = ["GMNS", "Data Elements", "Visualization"]
+
+dynamic = ["dependencies"]
+
+[project.optional-dependencies]
+base = ["pandas", "pyufunc", "Shapely>=2.0.7", "seaborn", "keplergl", "matplotlib>=3.10.0"] # for the core functionality
+# vis = ["keplergl", "matplotlib>=3.10.0"]
+# test = ["pytest", "coverage", "sphinx", "myst-parser", "sphinx_copybutton"]
+# all = ["plot4gmns[base, test]"]
+
+[project.urls]
+Homepage = 'https://github.com/xyluo25/plot4gmns'
+Documentation = 'https://plot4gmns.readthedocs.io/en/latest/'
+"Bug Tracker" = 'https://github.com/xyluo25/plot4gmns/issues'
+# Download = "https://www.pepy.tech/projects/plot4gmns"
+
+#         # 'Publication': '',
+#         # 'Citation': '',
+#         # 'Acknowledgement': '',
+#         # 'FAQs': '',
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
+# optional-dependencies = {file = ["requirements_dev.txt"]}
+
+[tool.setuptools]
+py-modules = []
+package-data = {'utdf2gmns' = ['*.txt', '*.xls', '*.xlsx', '*.csv'], "test_data" = ['*.xls']}
+
+# [tool.setuptools.packages.find]
+# where = ["utdf2gmns"]
+
+# [tool.setuptools.package-data]
+# utdf2gmns = ['*.txt', '*.xls', '*.xlsx', '*.csv']
